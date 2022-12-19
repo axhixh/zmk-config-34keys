@@ -1,0 +1,112 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+
+&lt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <250>;
+    quick-tap-ms = <0>;
+};
+
+&caps_word {    
+    continue-list = <BACKSPACE UNDERSCORE MINUS N1 N2 N3 N4 N5 N6 N7 N8 N9 N0>;
+};
+
+&sk {    
+    release-after-ms = <2000>;
+};
+
+&sl {
+    release-after-ms = <2000>;
+};
+
+/ { 
+
+        combos {
+            compatible = "zmk,combos";
+
+            combo_default {
+               timeout-ms = <50>;
+               key-positions = <14 15>;
+               bindings = <&to 0>;
+            };
+
+            combo_bluetooth {
+               timeout-ms = <50>;
+               key-positions = <24 25>;
+               bindings = <&to 4>;
+            };
+
+            combo_blank {
+               timeout-ms = <50>;
+               key-positions = <4 5>;
+               bindings = <&to 5>;
+            };
+
+        };
+
+        keymap {
+                compatible = "zmk,keymap";
+                
+            default_layer {
+                bindings = <
+                &kp Q &kp W &kp F &kp P &kp B    &kp J &kp L &kp U    &kp Y   &kp QUOT
+                &kp A &kp R &kp S &kp T &kp G    &kp M &kp N &kp E    &kp I   &kp O
+                &kp Z &kp X &kp C &kp D &kp V    &kp K &kp H &kp CMMA &kp DOT &kp FSLH
+                &sk LGUI &lt 1 BSPC              &lt 2 SPC &sk LSFT
+                >;
+            };
+
+            one_layer {
+                bindings = <
+                &kp LC(LG(Q)) &none      &kp LA(LG(3)) &kp LA(LG(4)) &kp LG(EQUAL)  &kp PG_UP  &kp HOME     &kp UP       &kp END   &kp PAUSE_BREAK  
+                &sk LSFT      &sk LCTL   &sk LALT      &sk LGUI      &kp ESC        &kp PG_DN  &kp LEFT     &kp DOWN     &kp RIGHT &kp SLCK  
+                &kp CAPS      &none      &none         &caps_word    &kp LG(MINUS)  &kp DEL    &kp LG(LBRC) &kp LG(RBRC) &kp INS   &kp PSCRN 
+                &reset &trans                                                       &kp RET &kp TAB                                       
+                >;
+            };
+
+            two_layer {
+                bindings = <
+                &kp GRAVE &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT   &kp C_VOL_UP  &sk RSFT         &kp LA(LG(UP))   &kp LA(LG(F))     &kp C_BRI_UP
+                &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5  &kp K_MUTE    &kp LA(LG(LEFT)) &kp LA(LG(DOWN)) &kp LA(LG(RIGHT)) &kp C_BRI_DN
+                &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0  &kp C_VOL_DN  &kp LC(LEFT)     &kp LC(RIGHT)    &none             &sl 3
+                &kp SEMI  &kp BSLH                                 &trans        &reset 
+                >;
+            };       
+
+            three_layer {
+                bindings = <
+                &kp TILDE &kp UNDER &kp PLUS &kp LBRC &kp RBRC   &reset   &kp F1 &kp F2  &kp F3  &kp F4
+                &kp EXCL  &kp AT    &kp HASH &kp DLLR &kp PRCNT  &kp INS  &kp F5 &kp F6  &kp F7  &kp F8
+                &kp CARET &kp AMPS  &kp STAR &kp LPAR &kp RPAR   &kp SLCK &kp F9 &kp F10 &kp F11 &kp F12
+                &kp COLON &kp PIPE                               &trans   &trans 
+                >;
+            };    
+        
+            four_layer {
+                bindings = <
+                &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &none &none &none &none &none
+                &bt BT_CLR    &none        &none        &none        &kp B         &kp T &none &none &none &none
+                &none         &none        &none        &none        &to 0         &to 6 &none &none &none &none 
+                &reset &bootloader                                                 &bootloader &reset
+                >;
+            };    
+
+            five_layer {
+                bindings = <
+                &none &none &none &none &none    &none &none &none &none &none
+                &none &none &none &none &none    &none &none &none &none &none
+                &none &none &none &none &none    &none &none &none &none &none 
+                &none &none                      &none &none
+                >;
+            };    
+        };
+};
