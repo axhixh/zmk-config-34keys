@@ -75,7 +75,7 @@
 
             two_layer {
                 bindings = <
-                &kp GRAVF &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT   &kp C_VOL_UP  &sk RSFT         &kp LA(LG(UP))   &kp LA(LG(F))     &kp C_BRI_UP
+                &kp GRAVE &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT   &kp C_VOL_UP  &sk RSFT         &kp LA(LG(UP))   &kp LA(LG(F))     &kp C_BRI_UP
                 &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5  &kp K_MUTE    &kp LA(LG(LEFT)) &kp LA(LG(DOWN)) &kp LA(LG(RIGHT)) &kp C_BRI_DN
                 &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0  &kp C_VOL_DN  &kp LC(LEFT)     &kp LC(RIGHT)    &none             &sl 3
                 &kp SEMI  &kp BSLH                                 &trans        &reset 
