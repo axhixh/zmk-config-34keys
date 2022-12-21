@@ -66,10 +66,10 @@
 
             one_layer {
                 bindings = <
-                &kp LC(LG(Q)) &none      &kp LA(LG(3)) &kp LA(LG(4)) &kp LG(EQUAL)  &kp PG_UP  &kp HOME     &kp UP       &kp END   &kp PAUSE_BREAK  
-                &sk LSFT      &sk LCTL   &sk LALT      &sk LGUI      &kp ESC        &kp PG_DN  &kp LEFT     &kp DOWN     &kp RIGHT &kp SLCK  
-                &kp CAPS      &none      &none         &caps_word    &kp LG(MINUS)  &kp DEL    &kp LG(LBRC) &kp LG(RBRC) &kp INS   &kp PSCRN 
-                &reset &trans                                                       &kp RET &kp TAB                                       
+                &kp LC(LG(Q)) &key_repeat &kp LA(LG(3)) &kp LA(LG(4)) &kp LG(EQUAL)  &kp PG_UP  &kp HOME     &kp UP       &kp END   &kp PAUSE_BREAK  
+                &sk LSFT      &sk LCTL    &sk LALT      &sk LGUI      &kp ESC        &kp PG_DN  &kp LEFT     &kp DOWN     &kp RIGHT &kp SLCK  
+                &kp CAPS      &none       &none         &caps_word    &kp LG(MINUS)  &kp DEL    &kp LG(LBRC) &kp LG(RBRC) &kp INS   &kp PSCRN 
+                &reset &trans                                                        &kp RET &kp TAB                                       
                 >;
             };
 
